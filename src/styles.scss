@@ -8,8 +8,11 @@
 }
 
 html{
+    
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background: #1C249A;
+    background: linear-gradient(180deg, rgba(28, 36, 154, 1) 21%, rgba(0, 0, 0, 1) 100%);
 }
