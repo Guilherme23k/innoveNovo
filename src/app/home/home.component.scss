@@ -1,6 +1,9 @@
 @import url(../../styles.scss);
 
 section{
+
+    margin-top: 20vh;
+
     display: flex;
     align-items: center;
     font-family: Inter;
@@ -25,3 +28,12 @@ section{
     }
 }
 
+.img-content{
+    display: flex;
+    justify-content: center;
+
+    .arrowDown {
+            width: 6rem;
+            filter: invert(96%) sepia(96%) saturate(18%) hue-rotate(18deg) brightness(106%) contrast(104%);   
+        }
+}
