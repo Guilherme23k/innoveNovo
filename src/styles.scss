@@ -1,18 +1,26 @@
 
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
+$blue-color: #1C249A;
+$black-color: #000000;
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-html{
-    
+html,
+body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: #1C249A;
-    background: linear-gradient(180deg, rgba(28, 36, 154, 1) 21%, rgba(0, 0, 0, 1) 100%);
-}
+    min-height: 100vh;
+
+    background: linear-gradient(180deg,
+            rgba(28, 36, 154, 1) 0%,
+            rgba(28, 36, 154, 1) 21%,
+            rgba(0, 0, 0, 1) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 50vh;
+    background-color: #000; }
