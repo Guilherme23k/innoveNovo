@@ -1,0 +1,29 @@
+section{
+
+    display: flex;
+    
+    .hl{
+        height: 3px;
+        width: 200px;
+        margin-left: 2rem;
+        background-color: grey;
+        border: none;
+    }
+    
+    .vl {
+            border-left: 3px solid grey;
+            height: 20rem;
+         
+    }
+
+    .text-content{
+
+        margin-top: 2rem;
+
+        h2{
+            color: white;
+        }
+
+    }
+
+}
