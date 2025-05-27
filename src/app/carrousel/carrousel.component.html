@@ -1,7 +1,16 @@
 <section>
     <hr class="hl">
-    <div class="vl"></div>
-    <div class="text-content">
-        <h2>Alguns de nossos eventos</h2>
+    <div class="content-wrapper">
+        <div class="vl"></div>
+        <div class="text-content">
+            <h2>Alguns de nossos eventos</h2>
+            <swiper-container [config]="swiperConfig" init="false">
+                <swiper-slide *ngFor="let card of cards">
+                    <div class="event-card" [style.background-image]="'url(' + card.imageUrl + ')'">
+                        <div class="event-title">{{ card.title }}</div>
+                    </div>   </swiper-slide>
+            </swiper-container>
+        </div>
     </div>
 </section>
+  
