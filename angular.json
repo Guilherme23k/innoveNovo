@@ -32,7 +32,9 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/swiper/element/css/swiper-element.min.css"
+              
             ],
             "scripts": []
           },
