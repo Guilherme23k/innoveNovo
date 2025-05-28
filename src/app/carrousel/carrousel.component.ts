@@ -90,7 +90,7 @@ export class CarrouselComponent {
   public swiperConfig = {
     slidesPerView: 2,
     spaceBetween: 10,
-    navigation: true,
+    navigation: false,
     pagination: false,
     autoplay: {
       delay: 3000,
