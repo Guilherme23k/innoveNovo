@@ -1,6 +1,5 @@
-section{
+section{    
 
-    width: 100%;
 
     .hl {
             height: 3px;
@@ -12,8 +11,20 @@ section{
 
 
     .vl {
+        display: inline-block;
         border-left: 3px solid grey;
         height: 33rem;
         margin-left: 2rem;   
     }
+
+        .text-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            h2{
+                color: white;
+            }
+        }
+
 }
