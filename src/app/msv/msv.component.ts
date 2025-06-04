@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
 interface Item {
   titulo: string;
   texto: string;
+  img: string;
 }
 
 @Component({
