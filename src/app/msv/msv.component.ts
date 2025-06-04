@@ -19,8 +19,9 @@ export class MSVComponent {
   
  lista: Item[] = [
 
-  {titulo: 'Missao', texto: 'Criando experiencias transformadoras,promovendo educação e desenvolvimento pessoal,mudando perspectivas.'},
-  
+  {titulo: 'Missão', texto: 'Criando experiencias transformadoras,promovendo educação e desenvolvimento pessoal,mudando perspectivas.'},
+  {titulo: 'Visão', texto: 'Queremos ser refêrencia na área de eventos,ganhando reconhecimento pela inovação e transformação na vida de jovens.'},
+  {titulo: 'Valores', texto: 'São baseados em :Aprendizado contínuo;Impacto positivo;Comunicação assertiva;Inovação.'}
   ];
 
 }
