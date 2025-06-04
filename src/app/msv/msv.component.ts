@@ -16,6 +16,11 @@ interface Item {
 
 
 export class MSVComponent {
+  
+ lista: Item[] = [
 
+  {titulo: 'Missao', texto: 'Criando experiencias transformadoras,promovendo educação e desenvolvimento pessoal,mudando perspectivas.'},
+  
+  ];
 
 }
