@@ -31,13 +31,38 @@ section {
         }
     }
 
-    .custom-card{
-        img{
-            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
-            width: 50px;
-        }
-        p{
-            color: white;
+    .card-content {
+        margin-top: 2rem;
+
+        .custom-card {
+            background-color: #1e1e2f;
+            border-radius: 1rem;
+            padding: 2rem 1.5rem;
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+            .icon {
+                margin-bottom: 1rem;
+
+                img {
+                    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+                    width: 60px;
+                    height: auto;
+                }
+            }
+
+            .text {
+                p {
+                    color: white;
+                    font-size: 1rem;
+                    line-height: 1.5;
+                }
+            }
         }
     }
 }
