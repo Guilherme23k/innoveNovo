@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 
+
+interface Item {
+  titulo: string;
+  texto: string;
+}
+
 @Component({
   selector: 'app-msv',
   standalone: true,
@@ -8,10 +14,6 @@ import { Component } from '@angular/core';
   styleUrl: './msv.component.scss'
 })
 
-interface Item {
-  titulo: string;
-  texto: string;
-}
 
 export class MSVComponent {
 
