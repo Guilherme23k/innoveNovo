@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 
@@ -9,7 +10,7 @@ interface Item {
 @Component({
   selector: 'app-msv',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './msv.component.html',
   styleUrl: './msv.component.scss'
 })
