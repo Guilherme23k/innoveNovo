@@ -7,6 +7,13 @@ import { Component } from '@angular/core';
   templateUrl: './msv.component.html',
   styleUrl: './msv.component.scss'
 })
+
+interface Item {
+  titulo: string;
+  texto: string;
+}
+
 export class MSVComponent {
+
 
 }
