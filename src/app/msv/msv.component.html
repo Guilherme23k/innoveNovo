@@ -10,7 +10,7 @@
             <div class="card-content" *ngFor="let item of lista">
                 <div class="custom-card">
                     <div class="icon">
-                        <img src="/bandeira1.svg" alt="">
+                        <img [src]="item.img" alt=" {{item.titulo}}">
                     </div>
                     <div class="text">
                         <h4>Missão</h4>
