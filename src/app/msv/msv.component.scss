@@ -33,6 +33,9 @@ section {
 
     .card-content {
         margin-top: 2rem;
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
 
         .custom-card {
             background-color: #1e1e2f;
