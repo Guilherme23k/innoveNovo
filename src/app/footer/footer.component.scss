@@ -1,5 +1,8 @@
 section{
 
+    display: flex;
+    align-items: flex-end;
+
     .vl {
             border-left: 3px solid grey;
             height: 14rem;
@@ -7,6 +10,7 @@ section{
         }
 
     .text-content{
+        
 
         h4{
             color: white;
