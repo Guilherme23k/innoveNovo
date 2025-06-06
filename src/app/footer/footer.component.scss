@@ -1,5 +1,5 @@
 section{
-
+    
     display: flex;
     align-items: flex-end;
 
@@ -10,9 +10,12 @@ section{
         }
 
     .text-content{
-        
+
+        font-family: Inter;
+        margin-left: 1rem;
 
         h4{
+            font-size: 42px;
             color: white;
         }
 
