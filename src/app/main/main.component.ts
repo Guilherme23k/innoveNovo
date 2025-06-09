@@ -9,7 +9,20 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   standalone: true,
   imports: [CarrouselComponent, MSVComponent, FooterComponent],
   templateUrl: './main.component.html',
-  styleUrl: './main.component.scss'
+  styleUrl: './main.component.scss',
+  animations: [
+    trigger('fadeInUp', [
+      state('hidden', style({
+        opacity: 0,
+        transform: 'translateY(30px)'
+      })),
+      state('visible', style({
+        opacity: 1,
+        transform: 'translateY(0)'
+      })),
+      transition('hidden => visible', animate('700ms ease-out'))
+    ])
+  ]
 })
 export class MainComponent {
 
