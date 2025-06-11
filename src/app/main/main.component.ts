@@ -30,4 +30,17 @@ export class MainComponent implements AfterViewInit{
 
   constructor(private el: ElementRef) {}
 
+  ngAfterViewInit(): void {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.animationState = 'visible';
+          observer.unobserve(this.el.nativeElement); // anima só uma vez
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(this.el.nativeElement);
+  }
+
 }
