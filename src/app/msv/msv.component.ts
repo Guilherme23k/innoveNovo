@@ -1,5 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component,  ElementRef, AfterViewInit, ViewChild  } from '@angular/core';
+import {
+  trigger, state, style, transition, animate
+} from '@angular/animations';
 
 
 interface Item {
@@ -13,12 +16,41 @@ interface Item {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './msv.component.html',
-  styleUrl: './msv.component.scss'
+  styleUrl: './msv.component.scss',
+  animations: [
+    trigger('slideInLeft', [
+      state('hidden', style({
+        opacity: 0,
+        transform: 'translateX(-100px)'
+      })),
+      state('visible', style({
+        opacity: 1,
+        transform: 'translateX(0)'
+      })),
+      transition('hidden => visible', animate('600ms ease-out'))
+    ])
+  ]
 })
 
 
-export class MSVComponent {
+export class MSVComponent implements AfterViewInit{
   
+  animationState='hidden';
+
+  @ViewChild('animado', { static: true }) animado!: ElementRef;
+
+  ngAfterViewInit() {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.animationState = 'visible';
+        }
+      });
+    });
+
+    observer.observe(this.animado.nativeElement);
+  }
+
  lista: Item[] = [
 
   {titulo: 'Missão', texto: 'Transformar vidas com educação e experiências que inspiram crescimento e novas perspectivas.', img: '/bandeira1.svg'},
