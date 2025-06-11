@@ -1,4 +1,4 @@
-import { Component, ElementRef, AfterViewInit, HostBinding } from '@angular/core';
+import { Component, ElementRef, AfterViewInit, HostBinding, ViewChild } from '@angular/core';
 import { CarrouselComponent } from "../carrousel/carrousel.component";
 import { MSVComponent } from "../msv/msv.component";
 import { FooterComponent } from "../footer/footer.component";
@@ -30,21 +30,26 @@ export class MainComponent implements AfterViewInit{
   msvVisible = 'hidden';
   footerVisible = 'hidden';
 
-  @HostBinding('@fadeInUp') animationState = 'hidden';
+  @ViewChild('carrousel', {static:true}) carrouselEl!:ElementRef;
+  @ViewChild('msv', {static:true}) msvEl!: ElementRef;
+  @ViewChild('footer', { static: true }) footerEl!: ElementRef;
 
-  constructor(private el: ElementRef) {}
 
   ngAfterViewInit(): void {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.animationState = 'visible';
-          observer.unobserve(this.el.nativeElement);
-        }
-      });
-    }, { threshold: 0.1 });
+    const createObserver = (el: ElementRef, callback: () => void) => {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            callback();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      observer.observe(el.nativeElement);
+    };
 
-    observer.observe(this.el.nativeElement);
-  }
-
+    createObserver(this.carrouselEl, () => this.carrouselVisible = 'visible');
+    createObserver(this.msvEl, () => this.msvVisible = 'visible');
+    createObserver(this.footerEl, () => this.footerVisible = 'visible');
+}
 }
