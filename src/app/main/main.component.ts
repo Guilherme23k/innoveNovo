@@ -11,16 +11,16 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',
   animations: [
-    trigger('fadeInUp', [
+    trigger('slideInLeft', [
       state('hidden', style({
         opacity: 0,
-        transform: 'translateY(30px)'
+        transform: 'translateX(100px)'
       })),
       state('visible', style({
         opacity: 1,
-        transform: 'translateY(0)'
+        transform: 'translateX(0)'
       })),
-      transition('hidden => visible', animate('700ms ease-out'))
+      transition('hidden => visible', animate('800ms ease-out'))
     ])
   ]
 })
