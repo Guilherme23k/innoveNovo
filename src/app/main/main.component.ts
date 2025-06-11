@@ -24,6 +24,6 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     ])
   ]
 })
-export class MainComponent {
+export class MainComponent implements AfterViewInit{
 
 }
