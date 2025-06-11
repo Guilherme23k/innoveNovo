@@ -26,4 +26,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 })
 export class MainComponent implements AfterViewInit{
 
+  @HostBinding('@fadeInUp') animationState = 'hidden';
+
+  constructor(private el: ElementRef) {}
+
 }
