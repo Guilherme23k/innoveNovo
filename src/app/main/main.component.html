@@ -1,5 +1,5 @@
 
-<section [@fadeInUp]="animationState">
+<section>
     
     <div class="vl"></div>
 
@@ -15,7 +15,11 @@
     </div>
     </section>
 
-    <app-carrousel></app-carrousel>
+    <div #carrousel [@slideInLeft]="carrouselVisible">
+
+        <app-carrousel></app-carrousel>
+    </div>
+
     <app-msv></app-msv>
     <app-footer></app-footer>
 
