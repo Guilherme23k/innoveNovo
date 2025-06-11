@@ -35,7 +35,7 @@ export class MainComponent implements AfterViewInit{
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           this.animationState = 'visible';
-          observer.unobserve(this.el.nativeElement); // anima só uma vez
+          observer.unobserve(this.el.nativeElement);
         }
       });
     }, { threshold: 0.1 });
