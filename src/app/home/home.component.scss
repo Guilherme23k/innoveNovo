@@ -25,6 +25,10 @@ section{
     img{
         width: 200px;
         height: auto;
+
+        &.float {
+            animation: float 3s ease-in-out infinite;
+        }
     }
 }
 
@@ -36,4 +40,19 @@ section{
             width: 6rem;
             filter: invert(96%) sepia(96%) saturate(18%) hue-rotate(18deg) brightness(106%) contrast(104%);   
         }
+}
+
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-15px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
 }
