@@ -14,42 +14,32 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     trigger('slideInLeft', [
       state('hidden', style({
         opacity: 0,
-        transform: 'translateX(100px)'
+        transform: 'translateX(-100px)'
       })),
       state('visible', style({
         opacity: 1,
         transform: 'translateX(0)'
       })),
-      transition('hidden => visible', animate('800ms ease-out'))
+      transition('hidden => visible', animate('600ms ease-out'))
     ])
   ]
 })
 export class MainComponent implements AfterViewInit{
 
-  carrouselVisible = 'hidden';
-  msvVisible = 'hidden';
-  footerVisible = 'hidden';
+  animationState='hidden';
 
-  @ViewChild('carrousel', {static:true}) carrouselEl!:ElementRef;
-  @ViewChild('msv', {static:true}) msvEl!: ElementRef;
-  @ViewChild('footer', { static: true }) footerEl!: ElementRef;
+  @ViewChild('animado', { static: true }) animado!: ElementRef;
 
 
-  ngAfterViewInit(): void {
-    const createObserver = (el: ElementRef, callback: () => void) => {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            callback();
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.2 });
-      observer.observe(el.nativeElement);
-    };
+  ngAfterViewInit() {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.animationState = 'visible';
+        }
+      });
+    });
 
-    createObserver(this.carrouselEl, () => this.carrouselVisible = 'visible');
-    createObserver(this.msvEl, () => this.msvVisible = 'visible');
-    createObserver(this.footerEl, () => this.footerVisible = 'visible');
-}
+    observer.observe(this.animado.nativeElement);
+  }
 }
