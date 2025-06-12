@@ -18,4 +18,12 @@ export class MascoteComponent {
     'Você é demais! 🦉✨'
   ]
 
+  falaAtual = this.falas[0];
+  index = 0;
+
+  trocarFala(){
+    this.index = (this.index + 1) % this.falas.length;
+    this.falaAtual = this.falas[this.index];
+  }
+
 }
