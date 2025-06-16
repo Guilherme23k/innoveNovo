@@ -1,5 +1,5 @@
 <div class="corujinha-container" (click)="trocarFala()">
-    <img src="/coruja.png" alt="Corujinha">
+    <img [ngClass]="{ 'pulo': pulando }" src="/coruja.png" alt="Corujinha">
     <div class="fala-balao">
         {{ falaAtual }}
     </div>

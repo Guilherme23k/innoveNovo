@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-mascote',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './mascote.component.html',
   styleUrl: './mascote.component.scss'
 })
