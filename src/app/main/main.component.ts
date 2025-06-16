@@ -3,11 +3,12 @@ import { CarrouselComponent } from "../carrousel/carrousel.component";
 import { MSVComponent } from "../msv/msv.component";
 import { FooterComponent } from "../footer/footer.component";
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { MascoteComponent } from "../mascote/mascote.component";
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [CarrouselComponent, MSVComponent, FooterComponent],
+  imports: [CarrouselComponent, MSVComponent, FooterComponent, MascoteComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',
   animations: [
