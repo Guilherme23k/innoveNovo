@@ -22,15 +22,20 @@ export class MascoteComponent {
   falaAtual = this.falas[0];
   index = 0;
   pulando = false;
+  falouAlgumaCoisa = false;
 
   trocarFala(){
-    this.index = (this.index + 1) % this.falas.length;
-    this.falaAtual = this.falas[this.index];
+    if (!this.falouAlgumaCoisa) {
+      this.falouAlgumaCoisa = true;
+      this.falaAtual = this.falas[0];
+      this.index = 0;
+    } else {
+      this.index = (this.index + 1) % this.falas.length;
+      this.falaAtual = this.falas[this.index];
+    }
 
     this.pulando = true;
-    setTimeout(() =>{
-      this.pulando = false;
-    }, 300);
+    setTimeout(() => this.pulando = false, 300);
   }
 
 
